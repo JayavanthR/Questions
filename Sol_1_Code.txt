@@ -1,0 +1,55 @@
+*******************************************************************************
+Lambda Code:
+*******************************************************************************
+import json
+import boto3
+
+glueClient = boto3.client('glue')
+
+def lambda_handler(event, context):
+    bktNm = event['Records'][0]['s3']['bucket']['name']
+    objNm = event['Records'][0]['s3']['object']['key'].split('/')[1]
+
+    response = glueClient.start_job_run(
+    JobName='saif_glue_job',
+    Arguments={
+        '--bkt':bktNm,'--obj':objNm
+    })
+
+    return response
+*******************************************************************************
+Glue Code:
+*******************************************************************************
+import sys
+from pyspark.sql import SparkSession
+from awsglue.utils import getResolvedOptions
+from pyspark.sql.types import StructType, StructField, StringType, IntegerType
+from pyspark.sql.functions import col, split, explode
+
+args = getResolvedOptions(sys.argv,['bkt','obj'])
+bktNm = args['bkt']
+objNm = args['obj']
+
+s3SrcPath = 's3://{}/input/{}'.format(bktNm, objNm)
+
+spark = SparkSession.builder.appName('Read_S3_Write_Redshift').master('local[*]')\
+        .config('spark.jars','s3://arif-bkt-deloct24/jars/redshift-jdbc42-2.1.0.12.jar').getOrCreate()
+
+schemaMoveies = StructType([
+    StructField('movieId', IntegerType()),
+    StructField('title', StringType()),
+    StructField('genres', StringType())
+    ])
+
+moviesDf = spark.read.format('csv').option('header','true').schema(schemaMoveies).load(s3SrcPath)
+
+splitExpDf = moviesDf.withColumn('genres', explode(split(col('genres'), '\|')))
+
+# splitExpDf.write.mode('overwrite').format('csv').save('s3://arif-bkt-deloct24/output/saif_op')
+splitExpDf.write.mode('overwrite').format('jdbc')\
+        .option('url','jdbc:redshift://redshift-cluster-arif.cdj17lrr42z5.us-east-1.redshift.amazonaws.com:5439/dev')\
+        .option('driver','com.amazon.redshift.jdbc.Driver')\
+        .option('user','awsuser')\
+        .option('password','Welcome123')\
+        .option('dbtable','saifMoviesTbl')\
+        .save()

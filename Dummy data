@@ -1,0 +1,230 @@
+Generate document:
+
+
+
+INSERT INTO GenerateDocument (id, user_id, template_id, parameters, timestamp, conditions, base_version_id, project_id, version) VALUES
+
+(‘GD001’, ‘U001’, ‘T001’, ‘param1’, ‘2024-06-01 12:00:00’, ‘condition1’, 1, ‘P001’, 1),
+
+(‘GD002’, ‘U002’, ‘T002’, ‘param2’, ‘2024-06-01 13:00:00’, ‘condition2’, 2, ‘P002’, 2),
+
+(‘GD003’, ‘U003’, ‘T003’, ‘param3’, ‘2024-06-01 14:00:00’, ‘condition3’, 3, ‘P003’, 3),
+
+(‘GD004’, ‘U004’, ‘T004’, ‘param4’, ‘2024-06-01 15:00:00’, ‘condition4’, 4, ‘P004’, 4),
+
+(‘GD005’, ‘U005’, ‘T005’, ‘param5’, ‘2024-06-01 16:00:00’, ‘condition5’, 5, ‘P005’, 5),
+
+(‘GD006’, ‘U006’, ‘T006’, ‘param6’, ‘2024-06-01 17:00:00’, ‘condition6’, 6, ‘P006’, 6),
+
+(‘GD007’, ‘U007’, ‘T007’, ‘param7’, ‘2024-06-01 18:00:00’, ‘condition7’, 7, ‘P007’, 7),
+
+(‘GD008’, ‘U008’, ‘T008’, ‘param8’, ‘2024-06-01 19:00:00’, ‘condition8’, 8, ‘P008’, 8),
+
+(‘GD009’, ‘U009’, ‘T009’, ‘param9’, ‘2024-06-01 20:00:00’, ‘condition9’, 9, ‘P009’, 9),
+
+(‘GD010’, ‘U010’, ‘T010’, ‘param10’, ‘2024-06-01 21:00:00’, ‘condition10’, 10, ‘P010’, 10),
+
+(‘GD011’, ‘U011’, ‘T011’, ‘param11’, ‘2024-06-02 12:00:00’, ‘condition11’, 11, ‘P011’, 11),
+
+(‘GD012’, ‘U012’, ‘T012’, ‘param12’, ‘2024-06-02 13:00:00’, ‘condition12’, 12, ‘P012’, 12),
+
+(‘GD013’, ‘U013’, ‘T013’, ‘param13’, ‘2024-06-02 14:00:00’, ‘condition13’, 13, ‘P013’, 13),
+
+(‘GD014’, ‘U014’, ‘T014’, ‘param14’, ‘2024-06-02 15:00:00’, ‘condition14’, 14, ‘P014’, 14),
+
+(‘GD015’, ‘U015’, ‘T015’, ‘param15’, ‘2024-06-02 16:00:00’, ‘condition15’, 15, ‘P015’, 15),
+
+(‘GD016’, ‘U016’, ‘T016’, ‘param16’, ‘2024-06-02 17:00:00’, ‘condition16’, 16, ‘P016’, 16),
+
+(‘GD017’, ‘U017’, ‘T017’, ‘param17’, ‘2024-06-02 18:00:00’, ‘condition17’, 17, ‘P017’, 17),
+
+(‘GD018’, ‘U018’, ‘T018’, ‘param18’, ‘2024-06-02 19:00:00’, ‘condition18’, 18, ‘P018’, 18),
+
+(‘GD019’, ‘U019’, ‘T019’, ‘param19’, ‘2024-06-02 20:00:00’, ‘condition19’, 19, ‘P019’, 19),
+
+(‘GD020’, ‘U020’, ‘T020’, ‘param20’, ‘2024-06-02 21:00:00’, ‘condition20’, 20, ‘P020’, 20);
+
+Generation Mapping:
+
+INSERT INTO GenerationMapping (id, placeholder, document_id, admin_json, currently_active, creation_timestamp) VALUES
+
+(‘GM001’, ‘Placeholder1’, ‘GD001’, ‘AdminJson1’, TRUE, ‘2024-06-01 12:05:00’),
+
+(‘GM002’, ‘Placeholder2’, ‘GD002’, ‘AdminJson2’, FALSE, ‘2024-06-01 13:05:00’),
+
+(‘GM003’, ‘Placeholder3’, ‘GD003’, ‘AdminJson3’, TRUE, ‘2024-06-01 14:05:00’),
+
+(‘GM004’, ‘Placeholder4’, ‘GD004’, ‘AdminJson4’, FALSE, ‘2024-06-01 15:05:00’),
+
+(‘GM005’, ‘Placeholder5’, ‘GD005’, ‘AdminJson5’, TRUE, ‘2024-06-01 16:05:00’),
+
+(‘GM006’, ‘Placeholder6’, ‘GD006’, ‘AdminJson6’, FALSE, ‘2024-06-01 17:05:00’),
+
+(‘GM007’, ‘Placeholder7’, ‘GD007’, ‘AdminJson7’, TRUE, ‘2024-06-01 18:05:00’),
+
+(‘GM008’, ‘Placeholder8’, ‘GD008’, ‘AdminJson8’, FALSE, ‘2024-06-01 19:05:00’),
+
+(‘GM009’, ‘Placeholder9’, ‘GD009’, ‘AdminJson9’, TRUE, ‘2024-06-01 20:05:00’),
+
+(‘GM010’, ‘Placeholder10’, ‘GD010’, ‘AdminJson10’, FALSE, ‘2024-06-01 21:05:00’),
+
+(‘GM011’, ‘Placeholder11’, ‘GD011’, ‘AdminJson11’, TRUE, ‘2024-06-02 12:05:00’),
+
+(‘GM012’, ‘Placeholder12’, ‘GD012’, ‘AdminJson12’, FALSE, ‘2024-06-02 13:05:00’),
+
+(‘GM013’, ‘Placeholder13’, ‘GD013’, ‘AdminJson13’, TRUE, ‘2024-06-02 14:05:00’),
+
+(‘GM014’, ‘Placeholder14’, ‘GD014’, ‘AdminJson14’, FALSE, ‘2024-06-02 15:05:00’),
+
+(‘GM015’, ‘Placeholder15’, ‘GD015’, ‘AdminJson15’, TRUE, ‘2024-06-02 16:05:00’),
+
+(‘GM016’, ‘Placeholder16’, ‘GD016’, ‘AdminJson16’, FALSE, ‘2024-06-02 17:05:00’),
+
+(‘GM017’, ‘Placeholder17’, ‘GD017’, ‘AdminJson17’, TRUE, ‘2024-06-02 18:05:00’),
+
+(‘GM018’, ‘Placeholder18’, ‘GD018’, ‘AdminJson18’, FALSE, ‘2024-06-02 19:05:00’),
+
+(‘GM019’, ‘Placeholder19’, ‘GD019’, ‘AdminJson19’, TRUE, ‘2024-06-02 20:05:00’),
+
+(‘GM020’, ‘Placeholder20’, ‘GD020’, ‘AdminJson20’, FALSE, ‘2024-06-02 21:05:00’);
+
+
+
+User request table:
+
+INSERT INTO UserRequests (request_id, convo_id, user_id, request_in, response_out, user_question, endpoint_name, endpoint_params_id, feedback, status, actual_response, filter_selected, demarcation, document_id, placeholder, generation_mapping_id, request_hash, application_id, request_payload) VALUES
+
+(‘REQ001’, ‘CONV001’, ‘U001’, ‘2024-06-01 12:10:00’, ‘2024-06-01 12:11:00’, ‘Question1’, ‘Endpoint1’, ‘EP001’, 5, 1, ‘Response1’, ‘Filter1’, 1, ‘GD001’, ‘Placeholder1’, ‘GM001’, ‘Hash1’, ‘APP001’, ‘{“payload1”:”data1”}’),
+
+(‘REQ002’, ‘CONV002’, ‘U002’, ‘2024-06-01 13:10:00’, ‘2024-06-01 13:11:00’, ‘Question2’, ‘Endpoint2’, ‘EP002’, 4, 2, ‘Response2’, ‘Filter2’, 2, ‘GD002’, ‘Placeholder2’, ‘GM002’, ‘Hash2’, ‘APP002’, ‘{“payload2”:”data2”}’),
+
+(‘REQ003’, ‘CONV003’, ‘U003’, ‘2024-06-01 14:10:00’, ‘2024-06-01 14:11:00’, ‘Question3’, ‘Endpoint3’, ‘EP003’, 3, 1, ‘Response3’, ‘Filter3’, 3, ‘GD003’, ‘Placeholder3’, ‘GM003’, ‘Hash3’, ‘APP003’, ‘{“payload3”:”data3”}’),
+
+(‘REQ004’, ‘CONV004’, ‘U004’, ‘2024-06-01 15:10:00’, ‘2024-06-01 15:11:00’, ‘Question4’, ‘Endpoint4’, ‘EP004’, 2, 2, ‘Response4’, ‘Filter4’, 4, ‘GD004’, ‘Placeholder4’, ‘GM004’, ‘Hash4’, ‘APP004’, ‘{“payload4”:”data4”}’),
+
+(‘REQ005’, ‘CONV005’, ‘U005’, ‘2024-06-01 16:10:00’, ‘2024-06-01 16:11:00’, ‘Question5’, ‘Endpoint5’, ‘EP005’, 5, 1, ‘Response5’, ‘Filter5’, 5, ‘GD005’, ‘Placeholder5’, ‘GM005’, ‘Hash5’, ‘APP005’, ‘{“payload5”:”data5”}’),
+
+(‘REQ006’, ‘CONV006’, ‘U006’, ‘2024-06-01 17:10:00’, ‘2024-06-01 17:11:00’, ‘Question6’, ‘Endpoint6’, ‘EP006’, 4, 2, ‘Response6’, ‘Filter6’, 6, ‘GD006’, ‘Placeholder6’, ‘GM006’, ‘Hash6’, ‘APP006’, ‘{“payload6”:”data6”}’),
+
+(‘REQ007’, ‘CONV007’, ‘U007’, ‘2024-06-01 18:10:00’, ‘2024-06-01 18:11:00’, ‘Question7’, ‘Endpoint7’, ‘EP007’, 3, 1, ‘Response7’, ‘Filter7’, 7, ‘GD007’, ‘Placeholder7’, ‘GM007’, ‘Hash7’, ‘APP007’, ‘{“payload7”:”data7”}’),
+
+(‘REQ008’, ‘CONV008’, ‘U008’, ‘2024-06-01 19:10:00’, ‘2024-06-01 19:11:00’, ‘Question8’, ‘Endpoint8’, ‘EP008’, 2, 2, ‘Response8’, ‘Filter8’, 8, ‘GD008’, ‘Placeholder8’, ‘GM008’, ‘Hash8’, ‘APP008’, ‘{“payload8”:”data8”}’),
+
+(‘REQ009’, ‘CONV009’, ‘U009’, ‘2024-06-01 20:10:00’, ‘2024-06-01 20:11:00’, ‘Question9’, ‘Endpoint9’, ‘EP009’, 5, 1, ‘Response9’, ‘Filter9’, 9, ‘GD009’, ‘Placeholder9’, ‘GM009’, ‘Hash9’, ‘APP009’, ‘{“payload9”:”data9”}’),
+
+(‘REQ010’, ‘CONV010’, ‘U010’, ‘2024-06-01 21:10:00’, ‘2024-06-01 21:11:00’, ‘Question10’, ‘Endpoint10’, ‘EP010’, 4, 2, ‘Response10’, ‘Filter10’, 10, ‘GD010’, ‘Placeholder10’, ‘GM010’, ‘Hash10’, ‘APP010’, ‘{“payload10”:”data10”}’),
+
+(‘REQ011’, ‘CONV011’, ‘U011’, ‘2024-06-02 12:10:00’, ‘2024-06-02 12:11:00’, ‘Question11’, ‘Endpoint11’, ‘EP011’, 3, 1, ‘Response11’, ‘Filter11’, 11, ‘GD011’, ‘Placeholder11’, ‘GM011’, ‘Hash11’, ‘APP011’, ‘{“payload11”:”data11”}’),
+
+(‘REQ012’, ‘CONV012’, ‘U012’, ‘2024-06-02 13:10:00’, ‘2024-06-02 13:11:00’, ‘Question12’, ‘Endpoint12’, ‘EP012’, 2, 2, ‘Response12’, ‘Filter12’, 12, ‘GD012’, ‘Placeholder12’, ‘GM012’, ‘Hash12’, ‘APP012’, ‘{“payload12”:”data12”}’),
+
+(‘REQ013’, ‘CONV013’, ‘U013’, ‘2024-06-02 14:10:00’, ‘2024-06-02 14:11:00’, ‘Question13’, ‘Endpoint13’, ‘EP013’, 5, 1, ‘Response13’, ‘Filter13’, 13, ‘GD013’, ‘Placeholder13’, ‘GM013’, ‘Hash13’, ‘APP013’, ‘{“payload13”:”data13”}’),
+
+(‘REQ014’, ‘CONV014’, ‘U014’, ‘2024-06-02 15:10:00’, ‘2024-06-02 15:11:00’, ‘Question14’, ‘Endpoint14’, ‘EP014’, 4, 2, ‘Response14’, ‘Filter14’, 14, ‘GD014’, ‘Placeholder14’, ‘GM014’, ‘Hash14’, ‘APP014’, ‘{“payload14”:”data14”}’),
+
+(‘REQ015’, ‘CONV015’, ‘U015’, ‘2024-06-02 16:10:00’, ‘2024-06-02 16:11:00’, ‘Question15’, ‘Endpoint15’, ‘EP015’, 3, 1, ‘Response15’, ‘Filter15’, 15, ‘GD015’, ‘Placeholder15’, ‘GM015’, ‘Hash15’, ‘APP015’, ‘{“payload15”:”data15”}’),
+
+(‘REQ016’, ‘CONV016’, ‘U016’, ‘2024-06-02 17:10:00’, ‘2024-06-02 17:11:00’, ‘Question16’, ‘Endpoint16’, ‘EP016’, 2, 2, ‘Response16’, ‘Filter16’, 16, ‘GD016’, ‘Placeholder16’, ‘GM016’, ‘Hash16’, ‘APP016’, ‘{“payload16”:”data16”}’),
+
+(‘REQ017’, ‘CONV017’, ‘U017’, ‘2024-06-02 18:10:00’, ‘2024-06-02 18:11:00’, ‘Question17’, ‘Endpoint17’, ‘EP017’, 5, 1, ‘Response17’, ‘Filter17’, 17, ‘GD017’, ‘Placeholder17’, ‘GM017’, ‘Hash17’, ‘APP017’, ‘{“payload17”:”data17”}’),
+
+(‘REQ018’, ‘CONV018’, ‘U018’, ‘2024-06-02 19:10:00’, ‘2024-06-02 19:11:00’, ‘Question18’, ‘Endpoint18’, ‘EP018’, 4, 2, ‘Response18’, ‘Filter18’, 18, ‘GD018’, ‘Placeholder18’, ‘GM018’, ‘Hash18’, ‘APP018’, ‘{“payload18”:”data18”}’),
+
+(‘REQ019’, ‘CONV019’, ‘U019’, ‘2024-06-02 20:10:00’, ‘2024-06-02 20:11:00’, ‘Question19’, ‘Endpoint19’, ‘EP019’, 3, 1, ‘Response19’, ‘Filter19’, 19, ‘GD019’, ‘Placeholder19’, ‘GM019’, ‘Hash19’, ‘APP019’, ‘{“payload19”:”data19”}’),
+
+(‘REQ020’, ‘CONV020’, ‘U020’, ‘2024-06-02 21:10:00’, ‘2024-06-02 21:11:00’, ‘Question20’, ‘Endpoint20’, ‘EP020’, 5, 1, ‘Response20’, ‘Filter20’, 20, ‘GD020’, ‘Placeholder20’, ‘GM020’, ‘Hash20’, ‘APP020’, ‘{“payload20”:”data20”}’);
+
+LLM ACTION:
+
+INSERT INTO LLMActions (llm_action_id, request_id, prompt, response, time_prompt_sent, time_response_received, prompt_name) VALUES
+
+(‘LLM001’, ‘REQ001’, ‘Prompt1’, ‘Response1’, ‘2024-06-01 12:15:00’, ‘2024-06-01 12:16:00’, ‘PromptName1’),
+
+(‘LLM002’, ‘REQ002’, ‘Prompt2’, ‘Response2’, ‘2024-06-01 13:15:00’, ‘2024-06-01 13:16:00’, ‘PromptName2’),
+
+(‘LLM003’, ‘REQ003’, ‘Prompt3’, ‘Response3’, ‘2024-06-01 14:15:00’, ‘2024-06-01 14:16:00’, ‘PromptName3’),
+
+(‘LLM004’, ‘REQ004’, ‘Prompt4’, ‘Response4’, ‘2024-06-01 15:15:00’, ‘2024-06-01 15:16:00’, ‘PromptName4’),
+
+(‘LLM005’, ‘REQ005’, ‘Prompt5’, ‘Response5’, ‘2024-06-01 16:15:00’, ‘2024-06-01 16:16:00’, ‘PromptName5’),
+
+(‘LLM006’, ‘REQ006’, ‘Prompt6’, ‘Response6’, ‘2024-06-01 17:15:00’, ‘2024-06-01 17:16:00’, ‘PromptName6’),
+
+(‘LLM007’, ‘REQ007’, ‘Prompt7’, ‘Response7’, ‘2024-06-01 18:15:00’, ‘2024-06-01 18:16:00’, ‘PromptName7’),
+
+(‘LLM008’, ‘REQ008’, ‘Prompt8’, ‘Response8’, ‘2024-06-01 19:15:00’, ‘2024-06-01 19:16:00’, ‘PromptName8’),
+
+(‘LLM009’, ‘REQ009’, ‘Prompt9’, ‘Response9’, ‘2024-06-01 20:15:00’, ‘2024-06-01 20:16:00’, ‘PromptName9’),
+
+(‘LLM010’, ‘REQ010’, ‘Prompt10’, ‘Response10’, ‘2024-06-01 21:15:00’, ‘2024-06-01 21:16:00’, ‘PromptName10’),
+
+(‘LLM011’, ‘REQ011’, ‘Prompt11’, ‘Response11’, ‘2024-06-02 12:15:00’, ‘2024-06-02 12:16:00’, ‘PromptName11’),
+
+(‘LLM012’, ‘REQ012’, ‘Prompt12’, ‘Response12’, ‘2024-06-02 13:15:00’, ‘2024-06-02 13:16:00’, ‘PromptName12’),
+
+(‘LLM013’, ‘REQ013’, ‘Prompt13’, ‘Response13’, ‘2024-06-02 14:15:00’, ‘2024-06-02 14:16:00’, ‘PromptName13’),
+
+(‘LLM014’, ‘REQ014’, ‘Prompt14’, ‘Response14’, ‘2024-06-02 15:15:00’, ‘2024-06-02 15:16:00’, ‘PromptName14’),
+
+(‘LLM015’, ‘REQ015’, ‘Prompt15’, ‘Response15’, ‘2024-06-02 16:15:00’, ‘2024-06-02 16:16:00’, ‘PromptName15’),
+
+(‘LLM016’, ‘REQ016’, ‘Prompt16’, ‘Response16’, ‘2024-06-02 17:15:00’, ‘2024-06-02 17:16:00’, ‘PromptName16’),
+
+(‘LLM017’, ‘REQ017’, ‘Prompt17’, ‘Response17’, ‘2024-06-02 18:15:00’, ‘2024-06-02 18:16:00’, ‘PromptName17’),
+
+(‘LLM018’, ‘REQ018’, ‘Prompt18’, ‘Response18’, ‘2024-06-02 19:15:00’, ‘2024-06-02 19:16:00’, ‘PromptName18’),
+
+(‘LLM019’, ‘REQ019’, ‘Prompt19’, ‘Response19’, ‘2024-06-02 20:15:00’, ‘2024-06-02 20:16:00’, ‘PromptName19’),
+
+(‘LLM020’, ‘REQ020’, ‘Prompt20’, ‘Response20’, ‘2024-06-02 21:15:00’, ‘2024-06-02 21:16:00’, ‘PromptName20’);
+
+Reference Document:
+
+INSERT INTO “ReferenceDocument” (id, type, name, user_id, template_id, “timestamp”, md5_id, file_format, opensearch_cpp_id, study_id, version, object_id, request_id, acknowledged, doc_params) VALUES
+
+(‘RD001’, ‘Type1’, ‘Name1’, ‘U001’, ‘T001’, ‘2024-06-01 12:20:00’, ‘MD501’, ‘PDF’, ‘CPP001’, ‘STUDY001’, ‘1.0’, ‘OBJ001’, ‘REQ001’, TRUE, ‘Param1’),
+
+(‘RD002’, ‘Type2’, ‘Name2’, ‘U002’, ‘T002’, ‘2024-06-01 13:20:00’, ‘MD502’, ‘DOC’, ‘CPP002’, ‘STUDY002’, ‘2.0’, ‘OBJ002’, ‘REQ002’, FALSE, ‘Param2’),
+
+(‘RD003’, ‘Type3’, ‘Name3’, ‘U003’, ‘T003’, ‘2024-06-01 14:20:00’, ‘MD503’, ‘XLS’, ‘CPP003’, ‘STUDY003’, ‘3.0’, ‘OBJ003’, ‘REQ003’, TRUE, ‘Param3’),
+
+(‘RD004’, ‘Type4’, ‘Name4’, ‘U004’, ‘T004’, ‘2024-06-01 15:20:00’, ‘MD504’, ‘TXT’, ‘CPP004’, ‘STUDY004’, ‘4.0’, ‘OBJ004’, ‘REQ004’, FALSE, ‘Param4’),
+
+(‘RD005’, ‘Type5’, ‘Name5’, ‘U005’, ‘T005’, ‘2024-06-01 16:20:00’, ‘MD505’, ‘CSV’, ‘CPP005’, ‘STUDY005’, ‘5.0’, ‘OBJ005’, ‘REQ005’, TRUE, ‘Param5’),
+
+(‘RD006’, ‘Type6’, ‘Name6’, ‘U006’, ‘T006’, ‘2024-06-01 17:20:00’, ‘MD506’, ‘PDF’, ‘CPP006’, ‘STUDY006’, ‘6.0’, ‘OBJ006’, ‘REQ006’, FALSE, ‘Param6’),
+
+(‘RD007’, ‘Type7’, ‘Name7’, ‘U007’, ‘T007’, ‘2024-06-01 18:20:00’, ‘MD507’, ‘DOC’, ‘CPP007’, ‘STUDY007’, ‘7.0’, ‘OBJ007’, ‘REQ007’, TRUE, ‘Param7’),
+
+(‘RD008’, ‘Type8’, ‘Name8’, ‘U008’, ‘T008’, ‘2024-06-01 19:20:00’, ‘MD508’, ‘XLS’, ‘CPP008’, ‘STUDY008’, ‘8.0’, ‘OBJ008’, ‘REQ008’, FALSE, ‘Param8’),
+
+(‘RD009’, ‘Type9’, ‘Name9’, ‘U009’, ‘T009’, ‘2024-06-01 20:20:00’, ‘MD509’, ‘TXT’, ‘CPP009’, ‘STUDY009’, ‘9.0’, ‘OBJ009’, ‘REQ009’, TRUE, ‘Param9’),
+
+(‘RD010’, ‘Type10’, ‘Name10’, ‘U010’, ‘T010’, ‘2024-06-01 21:20:00’, ‘MD510’, ‘CSV’, ‘CPP010’, ‘STUDY010’, ’10.0’, ‘OBJ010’, ‘REQ010’, FALSE, ‘Param10’),
+
+(‘RD011’, ‘Type11’, ‘Name11’, ‘U011’, ‘T011’, ‘2024-06-02 12:20:00’, ‘MD511’, ‘PDF’, ‘CPP011’, ‘STUDY011’, ’11.0’, ‘OBJ011’, ‘REQ011’, TRUE, ‘Param11’),
+
+(‘RD012’, ‘Type12’, ‘Name12’, ‘U012’, ‘T012’, ‘2024-06-02 13:20:00’, ‘MD512’, ‘DOC’, ‘CPP012’, ‘STUDY012’, ’12.0’, ‘OBJ012’, ‘REQ012’, FALSE, ‘Param12’),
+
+(‘RD013’, ‘Type13’, ‘Name13’, ‘U013’, ‘T013’, ‘2024-06-02 14:20:00’, ‘MD513’, ‘XLS’, ‘CPP013’, ‘STUDY013’, ’13.0’, ‘OBJ013’, ‘REQ013’, TRUE, ‘Param13’),
+
+(‘RD014’, ‘Type14’, ‘Name14’, ‘U014’, ‘T014’, ‘2024-06-02 15:20:00’, ‘MD514’, ‘TXT’, ‘CPP014’, ‘STUDY014’, ’14.0’, ‘OBJ014’, ‘REQ014’, FALSE, ‘Param14’),
+
+(‘RD015’, ‘Type15’, ‘Name15’, ‘U015’, ‘T015’, ‘2024-06-02 16:20:00’, ‘MD515’, ‘CSV’, ‘CPP015’, ‘STUDY015’, ’15.0’, ‘OBJ015’, ‘REQ015’, TRUE, ‘Param15’),
+
+(‘RD016’, ‘Type16’, ‘Name16’, ‘U016’, ‘T016’, ‘2024-06-02 17:20:00’, ‘MD516’, ‘PDF’, ‘CPP016’, ‘STUDY016’, ’16.0’, ‘OBJ016’, ‘REQ016’, FALSE, ‘Param16’),
+
+(‘RD017’, ‘Type17’, ‘Name17’, ‘U017’, ‘T017’, ‘2024-06-02 18:20:00’, ‘MD517’, ‘DOC’, ‘CPP017’, ‘STUDY017’, ’17.0’, ‘OBJ017’, ‘REQ017’, TRUE, ‘Param17’),
+
+(‘RD018’, ‘Type18’, ‘Name18’, ‘U018’, ‘T018’, ‘2024-06-02 19:20:00’, ‘MD518’, ‘XLS’, ‘CPP018’, ‘STUDY018’, ’18.0’, ‘OBJ018’, ‘REQ018’, FALSE, ‘Param18’),
+
+(‘RD019’, ‘Type19’, ‘Name19’, ‘U019’, ‘T019’, ‘2024-06-02 20:20:00’, ‘MD519’, ‘TXT’, ‘CPP019’, ‘STUDY019’, ’19.0’, ‘OBJ019’, ‘REQ019’, TRUE, ‘Param19’),
+
+(‘RD020’, ‘Type20’, ‘Name20’, ‘U020’, ‘T020’, ‘2024-06-02 21:20:00’, ‘MD520’, ‘XLS’, ‘CPP020’, ‘STUDY020’, ’20.0’, ‘OBJ020’, ‘REQ020’, TRUE, ‘Param20’);
+
+
+
+
+
+
+

@@ -1,0 +1,49 @@
+import psycopg2
+from sqlalchemy import create_engine
+from langchain.agents import create_sql_agent
+from langchain_experimental.sql import SQLDatabase
+from langchain.llms import HuggingFacePipeline
+from transformers import pipeline
+
+# Step 1: Load a local LLM model (e.g., GPT-Neo)
+local_llm_pipeline = pipeline("text-generation", model="EleutherAI/gpt-neo-1.3B")
+local_llm = HuggingFacePipeline(pipeline=local_llm_pipeline)
+
+# Step 2: Connect to the PostgreSQL database (without using URI)
+try:
+    # Manually create the connection using psycopg2
+    connection = psycopg2.connect(
+        dbname="dummy_data",
+        user="postgres",
+        password="jayavanth@27",
+        host="localhost",
+        port="5432"
+    )
+    print("Connected to PostgreSQL database successfully!")
+
+    # Pass the connection to SQLAlchemy
+    engine = create_engine("postgresql+psycopg2://", creator=lambda: connection)
+
+    # Initialize LangChain's SQLDatabase
+    db = SQLDatabase(engine)
+
+except Exception as e:
+    print(f"Error connecting to PostgreSQL: {e}")
+    exit()
+
+# Step 3: Create a LangChain SQL Agent
+agent_executor = create_sql_agent(
+    llm=local_llm,
+    db=db,
+    agent_type="zero-shot-react-description",  # Agent for SQL generation
+    verbose=True
+)
+
+# Step 4: Define user query and get results
+user_query = "List all users where version = 1."
+response = agent_executor.run(user_query)
+print("Agent Response:", response)
+
+# Clean up
+connection.close()
+print("Connection closed.")

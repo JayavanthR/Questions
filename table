@@ -1,0 +1,77 @@
+CREATE TABLE GenerateDocument (
+    id VARCHAR(255) PRIMARY KEY,
+    user_id VARCHAR(255) NULL,
+    template_id VARCHAR(255) NOT NULL,
+    parameters VARCHAR(255) NOT NULL,
+    timestamp TIMESTAMP NOT NULL,
+    conditions VARCHAR(255) NOT NULL,
+    base_version_id INT NULL,
+    project_id VARCHAR(10) NOT NULL,
+    version INT NULL
+);
+ 
+CREATE TABLE GenerationMapping (
+    id VARCHAR(255) NOT NULL,
+    placeholder VARCHAR(255) NOT NULL,
+    document_id VARCHAR(255) NOT NULL,
+    admin_json VARCHAR(255) NOT NULL,
+    currently_active BOOLEAN NOT NULL,
+    creation_timestamp TIMESTAMP NOT NULL,
+    PRIMARY KEY (id)
+);
+ 
+CREATE TABLE UserRequests (
+    request_id VARCHAR(50) PRIMARY KEY,
+    convo_id VARCHAR(50) NULL,
+    user_id VARCHAR(50) NULL,
+    request_in timestamp NOT NULL,
+    response_out timestamp NOT NULL,
+    user_question VARCHAR(50) NOT NULL,
+    endpoint_name VARCHAR(50) NOT NULL,
+    endpoint_params_id VARCHAR(50) NULL,
+    feedback int4 NULL,
+    status_code int4 NOT NULL,
+    actual_response VARCHAR(50) NOT NULL,
+    filter_selected VARCHAR(50) NULL,
+    demarcation int4 NOT NULL,
+    document_id VARCHAR(50) NULL,
+    placeholder VARCHAR(50) NULL,
+    generation_mapping_id VARCHAR(50) NULL,
+    request_hash VARCHAR(50) NULL,
+    application_id VARCHAR(50) NULL,
+    request_payload json NULL,
+    FOREIGN KEY (generation_mapping_id) REFERENCES GenerationMapping(id),
+    FOREIGN KEY (document_id) REFERENCES GenerateDocument(id)
+);
+ 
+CREATE TABLE LLMActions (
+    llm_action_id VARCHAR(255) PRIMARY KEY,
+    request_id VARCHAR(255) NOT NULL,
+    prompt VARCHAR(255) NOT NULL,
+    response VARCHAR(255) NOT NULL,
+    time_prompt_sent TIMESTAMP NOT NULL,
+    time_response_received TIMESTAMP NOT NULL,
+    prompt_name VARCHAR(255) NULL,
+    FOREIGN KEY (request_id) REFERENCES UserRequests(request_id)
+);
+ 
+ 
+CREATE TABLE IF NOT EXISTS public."ReferenceDocument"
+(
+    id character varying COLLATE pg_catalog."default" NOT NULL,
+    type character varying COLLATE pg_catalog."default" NOT NULL,
+    name character varying COLLATE pg_catalog."default" NOT NULL,
+    user_id character varying COLLATE pg_catalog."default",
+    template_id character varying COLLATE pg_catalog."default" NOT NULL,
+    "timestamp" timestamp without time zone NOT NULL,
+    md5_id character varying COLLATE pg_catalog."default" NOT NULL,
+    file_format character varying COLLATE pg_catalog."default" NOT NULL,
+    opensearch_cpp_id character varying COLLATE pg_catalog."default",
+    study_id character varying COLLATE pg_catalog."default" NOT NULL,
+    version character varying COLLATE pg_catalog."default" NOT NULL,
+    object_id character varying COLLATE pg_catalog."default",
+    request_id character varying COLLATE pg_catalog."default",
+    acknowledged boolean NOT NULL,
+    doc_params character varying COLLATE pg_catalog."default",
+    CONSTRAINT "ReferenceDocument_pkey" PRIMARY KEY (id)
+);
